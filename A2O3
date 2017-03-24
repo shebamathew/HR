@@ -1,0 +1,35 @@
+function transformEmployeeData(array) {
+  // var newArray = []; array that goes around new objects
+  
+  
+  for (var i = 0; i < array.length; i ++) {
+    var newObj = {};
+    var outKeys = outArray[0];
+    var outValues = outArray[1];
+    newObj[outKeys] = outValues;
+    var outArray = array[i];
+    for (var j in outArray) {
+      var inArray = outArray[j];
+      var keys = inArray[0];
+      var values = inArray[1];
+      newObj[keys] = values;
+      //newArray.push(newObj);
+    }
+  }
+  return(newObj);
+} 
+
+var input = [
+    [
+        ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk'], ['tShirtSize','M']
+    ],
+    [
+        ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager'], ['tShirtSize','M']
+    ],
+    [
+        ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager'], ['tShirtSize','M']
+    ],
+    ]
+
+
+transformEmployeeData(input);
